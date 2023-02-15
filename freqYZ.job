@@ -1,0 +1,13 @@
+#!/bin/bash                
+#SBATCH -J freq-YZ           
+#SBATCH -n 20
+#SBATCH -N 5
+#SBATCH -p kshdnormal
+#SBATCH -o slurm.log.%j
+#SBATCH -e wrong.log.%j
+#SBATCH --exclusive
+
+
+mafile=$(generate_pbs_nodefile)
+cat $mafile
+mpirun -np 20 -hostfile $mafile -x LD_LIBRARY_PATH ./ana-freq-YZ.out

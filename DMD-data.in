@@ -1,0 +1,29 @@
+#------ read savedata-XZ00?.dat  (?=np) and write date for DMD analysis
+ # np  jb   je  kb  ke  mp_end  nstep  nz_myid  (seta=0-90 deg)  ! np =4 --> x=240;   np=6 --> x=280;  np=8 --> x=320
+  1   6800  7000   1  100   10     1      6
+ # jp1 kp1  jp2 kp2  jp3 kp3 jp4 kp4   (4 point for T serials)
+    500   40  550  40  600  40  650  40
+
+#------ read savedata-XY00?.dat  (?=np) and write date for DMD analysis
+ # np  ib   ie  kb  ke  mp_end  nstep    (seta=0-90 deg)  ! np =4 --> x=240;   np=6 --> x=280;  np=8 --> x=320
+  1   1  3000   1  3600   600     1
+ # ip1 kp1  ip2 kp2  ip3 kp3 ip4 kp4   (4 point for T serials)
+    500   1  550  1  600  1  650  1
+
+
+
+
+ #------ read savedata-YZ00?.dat  (?=np) and write date for DMD analysis
+ # np  jb   je  kb  ke  mp_end  nstep    (seta=0-90 deg)  ! np =4 --> x=240;   np=6 --> x=280;  np=8 --> x=320
+  1   1  3600   1  100   600     1
+ # jp1 kp1  jp2 kp2  jp3 kp3 jp4 kp4   (4 point for T serials)
+    1   53  151  51  302  44  451  41
+
+
+
+
+!i=  393   694   844   995   1145   1296   1446   1597   1747   1898   2500
+!x=  200   300   350   400   450    500    550    600    650    700    900
+
+!j=             1   151   302   451 
+!seta(degree)=  0   15    30    45   

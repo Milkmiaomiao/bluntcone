@@ -1,0 +1,23 @@
+ # 2d grid-generate control file V3.1   !! The unit of angle is DEGREE !
+ #  nx  (streamwise)    nseta (spanwise)       ny (wall-normal )   ! mesh 
+     9800                5800                     100 
+ # seta_cone,seta_leeward,seta_windward,h_leeward,h_windward, hwall          ! wall-normal setup
+      7.0         9.0     9.0       6.0     6.0     0.01 
+ # R0   x_inlet  x_end  nx_buff  alfax_buff      
+   1.0   50.0    800.0   200     1.01  
+# Iflag_mesh_seta   ngrid_buffer, seta_comput_domain (degree)   (Iflag_mesh_seta: 0 and 1  homogerence (0: 0 < seta< 2PI; 1: 0< seta< PI), 2 non-homogerence )
+    0               100            30.d0      
+
+#------------------------------------------------------------------------------------------------------------
+
+      open(66,file='grid2d.in')
+	   read(66,*)
+	   read(66,*)
+	   read(66,*) nx,nseta,ny
+       read(66,*)
+	   read(66,*) seta_cone,seta_leeward,seta_windward,h_leeward,h_windward, hwall          ! wall-normal setup
+	   read(66,*)
+	   read(66,*) R0, x_inlet, x_end, nx_buff, alfax_buff                                       ! x- setup
+	   read(66,*)
+	   read(66,*) Iflag_seta,nseta_buff,seta_span_domain                  ! seta- setup
+	   close(66)

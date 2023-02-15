@@ -1,0 +1,13 @@
+#!/bin/bash                
+#SBATCH -J flow3d0           
+#SBATCH -n 100
+#SBATCH -N 20
+#SBATCH -p kshdnormal
+#SBATCH -o slurm.log.%j
+#SBATCH -e wrong.log.%j
+#SBATCH --exclusive
+
+
+mafile=$(generate_pbs_nodefile)
+cat $mafile
+mpirun -np 100 -hostfile $mafile -x LD_LIBRARY_PATH ./bluntcon-flow3d0.out

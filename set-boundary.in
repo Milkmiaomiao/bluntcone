@@ -1,0 +1,13 @@
+ !  nx, ny, nz, nx1, ny1, nz1, Iflag_half
+   250  181  101     9800  5800  100  1
+ !  Mesh_old, Data_old, Mesh_new
+  "../../laminar/Mesh3d-new.dat"  ,  "../../laminar/flow3d-plot3d-new.dat",  "OCFD3d-Mesh.dat"
+
+!----------------------------------------------
+  open(99,file="set-boundary.in")
+  read(99,*)
+  read(99,*)  nx, ny, nz, nx1, ny1, nz1, Iflag_half
+  read(99,*)
+  read(99,*)  Mesh_old, Data_old, Mesh_new
+  close(99)
+

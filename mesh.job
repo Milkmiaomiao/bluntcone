@@ -1,0 +1,13 @@
+#!/bin/bash                
+#SBATCH -J mesh           
+#SBATCH -n 60
+#SBATCH -N 20
+#SBATCH -p kshdnormal
+#SBATCH -o slurm.log.%j
+#SBATCH -e wrong.log.%j
+#SBATCH --exclusive
+
+
+mafile=$(generate_pbs_nodefile)
+cat $mafile
+mpirun -np 60 -hostfile   $mafile -x LD_LIBRARY_PATH  ./bluntcone-withoutleading-mesh.out
